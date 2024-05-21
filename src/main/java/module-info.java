@@ -6,8 +6,7 @@ module tn.louay {
     requires unirest.java.core;
     requires com.google.gson;
     requires java.net.http;
-    requires jjwt;
-    requires jjwt.api;
+    requires org.jose4j;
 
     opens tn.louay to javafx.fxml;
     // open to com.google.gson and javafx.base

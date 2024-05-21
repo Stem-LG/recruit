@@ -8,6 +8,10 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+import org.jose4j.jwt.JwtClaims;
+import org.jose4j.jwt.consumer.JwtConsumer;
+import org.jose4j.jwt.consumer.JwtConsumerBuilder;
+
 /**
  * JavaFX App
  */
@@ -47,15 +51,23 @@ public class App extends Application {
     }
 
     public static String getUserName() {
-        // Claims claims = Jwts.parser().build().parseSignedClaims(token).getPayload();
-        // System.out.println("claims: " + claims);
 
-        // String[] splitToken = token.split("\\.");
+        JwtConsumer consumer = new JwtConsumerBuilder()
+                .setSkipAllValidators()
+                .setDisableRequireSignature()
+                .setSkipSignatureVerification()
+                .build();
 
-        // Jwt claims = Jwts.parser().build().parse(splitToken[0] + "." + splitToken[1]
-        // + ".");
+        try {
 
-        // System.out.println("claims: " + claims);
+            JwtClaims claims = consumer.processToClaims(token);
+
+            String name = claims.getClaimsMap().get("name").toString();
+
+            return name;
+        } catch (Exception e) {
+            System.out.println(e);
+        }
 
         return "username";
     }
