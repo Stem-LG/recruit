@@ -78,13 +78,12 @@ public class applicationsController {
         applicantsTable.setOnMouseClicked(e -> {
 
             if (e.getClickCount() == 2) {
-                // GetApplications selectedApplicant =
-                // applicantsTable.getSelectionModel().getSelectedItem();
+                GetApplications selectedApplicant = applicantsTable.getSelectionModel().getSelectedItem();
+
                 try {
-                    // App.setRoot("recruiter_application");
-                    // recruiterOfferController controller = (recruiterOfferController)
-                    // App.getController();
-                    // controller.fetchOffer(selectedOffer.getId());
+                    App.setRoot("recruiter_application");
+                    recruiterApplicationController controller = (recruiterApplicationController) App.getController();
+                    controller.setApplication(selectedApplicant.getId(), offerId);
                 } catch (Exception ex) {
                     System.out.println(ex);
                 }
