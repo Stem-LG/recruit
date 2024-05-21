@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.louay.recruiterApplicationController">
+   <padding>
+      <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
+   </padding>
+   <children>
+      <HBox alignment="CENTER_LEFT" prefWidth="822.0" spacing="10.0">
+         <children>
+            <Button fx:id="logoutBtn" mnemonicParsing="false" prefHeight="29.0" prefWidth="94.0" style="-fx-background-color: #0d97ff; -fx-background-radius: 50;" text="Logout" textFill="WHITE">
+               <font>
+                  <Font name="Poppins Medium" size="15.0" />
+               </font>
+            </Button>
+            <Text fx:id="recruiterName" strokeType="OUTSIDE" strokeWidth="0.0" text="Recruiter Name" wrappingWidth="102.298828125">
+               <HBox.margin>
+                  <Insets bottom="-2.0" />
+               </HBox.margin>
+            </Text>
+         </children>
+      </HBox>
+      <Text fill="#0d97ff" strokeType="OUTSIDE" strokeWidth="0.0" text="Application Details" textAlignment="CENTER" wrappingWidth="489.3366394042969">
+         <font>
+            <Font name="Poppins Medium" size="36.0" />
+         </font>
+      </Text>
+      <Text fx:id="id" fill="#0d97ff" strokeType="OUTSIDE" strokeWidth="0.0" text="N°1" textAlignment="CENTER" wrappingWidth="489.3366394042969">
+         <font>
+            <Font name="Poppins Medium" size="36.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="20.0" />
+         </VBox.margin>
+      </Text>
+      <GridPane prefHeight="550.0" prefWidth="693.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="422.20001220703125" minWidth="10.0" prefWidth="141.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="786.1999893188477" minWidth="10.0" prefWidth="559.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="71.79999389648438" minHeight="10.0" prefHeight="43.0" vgrow="NEVER" />
+            <RowConstraints maxHeight="71.79999389648438" minHeight="10.0" prefHeight="43.0" vgrow="NEVER" />
+            <RowConstraints maxHeight="71.79999389648438" minHeight="10.0" prefHeight="43.0" vgrow="NEVER" />
+            <RowConstraints maxHeight="81.60000610351562" minHeight="10.0" prefHeight="43.0" vgrow="NEVER" />
+            <RowConstraints maxHeight="93.5999755859375" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="198.0" minHeight="10.0" prefHeight="196.0" valignment="TOP" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="186.0" minHeight="10.0" prefHeight="186.0" valignment="TOP" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Text fill="#0d97ff" strokeType="OUTSIDE" strokeWidth="0.0" text="Offer:" wrappingWidth="66.93670654296875">
+               <font>
+                  <Font name="Poppins Medium" size="20.0" />
+               </font>
+            </Text>
+            <Text fill="#0d97ff" strokeType="OUTSIDE" strokeWidth="0.0" text="Posted at: " wrappingWidth="126.336669921875" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Poppins Medium" size="20.0" />
+               </font>
+            </Text>
+            <Text fill="#0d97ff" strokeType="OUTSIDE" strokeWidth="0.0" text="Resume AI Summary :" wrappingWidth="138.9366455078125" GridPane.rowIndex="6">
+               <font>
+                  <Font name="Poppins Medium" size="20.0" />
+               </font>
+            </Text>
+            <Text fill="#0d97ff" strokeType="OUTSIDE" strokeWidth="0.0" text="Email :" wrappingWidth="131.9366455078125" GridPane.rowIndex="4">
+               <font>
+                  <Font name="Poppins Medium" size="20.0" />
+               </font>
+            </Text>
+            <Text fill="#0d97ff" strokeType="OUTSIDE" strokeWidth="0.0" text="Motivation :" wrappingWidth="134.9366455078125" GridPane.rowIndex="5" GridPane.vgrow="ALWAYS">
+               <font>
+                  <Font name="Poppins Medium" size="20.0" />
+               </font>
+            </Text>
+            <Text fx:id="offerTitle" strokeType="OUTSIDE" strokeWidth="0.0" text="Offer Title" wrappingWidth="506.13673400878906" GridPane.columnIndex="1">
+               <font>
+                  <Font name="Poppins Medium" size="20.0" />
+               </font>
+            </Text>
+            <Text fx:id="createdAt" strokeType="OUTSIDE" strokeWidth="0.0" text="Application creation date" wrappingWidth="506.13673400878906" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Poppins Medium" size="20.0" />
+               </font>
+            </Text>
+            <Text fx:id="email" strokeType="OUTSIDE" strokeWidth="0.0" text="Applicant Email" wrappingWidth="506.13673400878906" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <font>
+                  <Font name="Poppins Medium" size="20.0" />
+               </font>
+            </Text>
+            <Text fx:id="motivation" strokeType="OUTSIDE" strokeWidth="0.0" text="Applicant Motivation" wrappingWidth="506.13673400878906" GridPane.columnIndex="1" GridPane.rowIndex="5">
+               <font>
+                  <Font name="Poppins Medium" size="20.0" />
+               </font>
+            </Text>
+            <Text fx:id="resumeSummary" strokeType="OUTSIDE" strokeWidth="0.0" text="Generated by llama3 70b hosted @ Groq.ai" wrappingWidth="506.13673400878906" GridPane.columnIndex="1" GridPane.rowIndex="6">
+               <font>
+                  <Font name="Poppins Medium" size="20.0" />
+               </font>
+            </Text>
+            <Text fill="#0d97ff" strokeType="OUTSIDE" strokeWidth="0.0" text="Name:" wrappingWidth="66.93670654296875" GridPane.rowIndex="3">
+               <font>
+                  <Font name="Poppins Medium" size="20.0" />
+               </font>
+            </Text>
+            <Text fx:id="name" strokeType="OUTSIDE" strokeWidth="0.0" text="Applicant Name" wrappingWidth="506.13673400878906" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <font>
+                  <Font name="Poppins Medium" size="20.0" />
+               </font>
+            </Text>
+            <Text fill="#0d97ff" strokeType="OUTSIDE" strokeWidth="0.0" text="Status:" wrappingWidth="126.336669921875" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Poppins Medium" size="20.0" />
+               </font>
+            </Text>
+            <Text fx:id="status" strokeType="OUTSIDE" strokeWidth="0.0" text="Application status" wrappingWidth="506.13673400878906" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Poppins Medium" size="20.0" />
+               </font>
+            </Text>
+         </children>
+         <VBox.margin>
+            <Insets bottom="20.0" left="50.0" right="50.0" />
+         </VBox.margin>
+      </GridPane>
+      <HBox alignment="CENTER" prefHeight="54.0" prefWidth="800.0" spacing="20.0">
+         <children>
+            <Button fx:id="backBtn" mnemonicParsing="false" prefHeight="50.0" prefWidth="179.0" style="-fx-background-color: #0d97ff; -fx-background-radius: 20;" text="Back" textFill="WHITE">
+               <font>
+                  <Font name="Poppins Medium" size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="acceptBtn" mnemonicParsing="false" prefHeight="50.0" prefWidth="179.0" style="-fx-background-color: #4c4; -fx-background-radius: 20;" text="Accept" textFill="WHITE">
+               <font>
+                  <Font name="Poppins Medium" size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="rejectBtn" mnemonicParsing="false" prefHeight="50.0" prefWidth="179.0" style="-fx-background-color: #f44; -fx-background-radius: 20;" text="Reject" textFill="WHITE">
+               <font>
+                  <Font name="Poppins Medium" size="20.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</VBox>

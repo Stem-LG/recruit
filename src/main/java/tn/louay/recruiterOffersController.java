@@ -61,8 +61,8 @@ public class recruiterOffersController {
                 GetOffers selectedOffer = offersTable.getSelectionModel().getSelectedItem();
                 System.out.println("Selected offer: " + selectedOffer);
                 try {
-                    App.setRoot("offer");
-                    offerController controller = (offerController) App.getController();
+                    App.setRoot("recruiter_offer");
+                    recruiterOfferController controller = (recruiterOfferController) App.getController();
                     controller.fetchOffer(selectedOffer.getId());
                 } catch (Exception ex) {
                     System.out.println(ex);

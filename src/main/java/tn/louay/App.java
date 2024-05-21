@@ -8,11 +8,6 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.Jws;
-import io.jsonwebtoken.Jwt;
-import io.jsonwebtoken.Jwts;
-
 /**
  * JavaFX App
  */
