@@ -13,15 +13,18 @@ import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.text.Text;
 import kong.unirest.core.Unirest;
 import tn.louay.dto.GetOffers;
 
-public class offersController {
+public class recruiterOffersController {
 
     @FXML
-    private Button loginBtn;
+    private Text recruiterName;
     @FXML
-    private Button refreshBtn;
+    private Button logoutBtn;
+    @FXML
+    private Button addOfferBtn;
     @FXML
     private TableView<GetOffers> offersTable;
     @FXML
@@ -52,11 +55,6 @@ public class offersController {
         createdAtColumn.setCellValueFactory(new PropertyValueFactory<GetOffers, Date>("createdAt"));
         fetchOffers();
 
-        refreshBtn.setOnAction(e -> {
-            System.out.println("Refreshing offers...");
-            fetchOffers();
-        });
-
         offersTable.setOnMouseClicked(e -> {
 
             if (e.getClickCount() == 2) {
@@ -73,18 +71,30 @@ public class offersController {
 
         });
 
-        loginBtn.setOnAction(e -> {
+        logoutBtn.setOnAction(e -> {
             try {
-                App.setRoot("login");
+                App.setToken(null);
+                App.setRoot("offers");
             } catch (Exception ex) {
                 System.out.println(ex);
             }
         });
+
+        addOfferBtn.setOnAction(e -> {
+            try {
+                App.setRoot("add_offer");
+            } catch (Exception ex) {
+                System.out.println(ex);
+            }
+        });
+
+        recruiterName.setText(App.getUserName());
     }
 
     private void fetchOffers() {
 
-        String offersJson = Unirest.get("http://localhost:3000/offers")
+        String offersJson = Unirest.get("http://localhost:3000/recruiter/offers")
+                .header("Authorization", "Bearer " + App.getToken())
                 .asString()
                 .getBody();
 

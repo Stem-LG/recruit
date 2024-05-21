@@ -87,6 +87,11 @@ public class applicationController {
                     App.setRoot("offer");
                     offerController controller = (offerController) App.getController();
                     controller.fetchOffer(offerId);
+                } else {
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("Application Failed");
+                    alert.setContentText("Failed to send your application");
+                    alert.showAndWait();
                 }
 
             } catch (Exception ex) {

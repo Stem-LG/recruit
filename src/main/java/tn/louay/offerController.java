@@ -73,6 +73,14 @@ public class offerController {
             }
         });
 
+        loginBtn.setOnAction(e -> {
+            try {
+                App.setRoot("login");
+            } catch (Exception ex) {
+                System.out.println(ex);
+            }
+        });
+
     }
 
 }

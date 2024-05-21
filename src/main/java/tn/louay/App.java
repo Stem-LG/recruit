@@ -8,10 +8,17 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jws;
+import io.jsonwebtoken.Jwt;
+import io.jsonwebtoken.Jwts;
+
 /**
  * JavaFX App
  */
 public class App extends Application {
+
+    private static String token;
 
     private static Scene scene;
     private static FXMLLoader loader;
@@ -34,6 +41,28 @@ public class App extends Application {
     private static Parent loadFXML(String fxml) throws IOException {
         loader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
         return loader.load();
+    }
+
+    public static String getToken() {
+        return token;
+    }
+
+    public static void setToken(String newToken) {
+        token = newToken;
+    }
+
+    public static String getUserName() {
+        // Claims claims = Jwts.parser().build().parseSignedClaims(token).getPayload();
+        // System.out.println("claims: " + claims);
+
+        // String[] splitToken = token.split("\\.");
+
+        // Jwt claims = Jwts.parser().build().parse(splitToken[0] + "." + splitToken[1]
+        // + ".");
+
+        // System.out.println("claims: " + claims);
+
+        return "username";
     }
 
     public static void main(String[] args) {
